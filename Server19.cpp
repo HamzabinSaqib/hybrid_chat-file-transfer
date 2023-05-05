@@ -147,6 +147,7 @@ void IO_operation()
                 findIter = find_if(clientSockets.begin(), clientSockets.end(), [cap](const std::pair<int, long>& set) { return set.second == cap; });
                 itr = clients.find(findIter->first);
 
+				//! DO NOT USE FOLLOWING COMMENTED BLOCK
                 // // Informing Clients about Updated IDs
                 // bool change = false;
                 // for (std::list<set>::iterator itsmall = clientSockets.begin(); itsmall != clientSockets.end(); itsmall++)
@@ -161,6 +162,7 @@ void IO_operation()
                 //         change = true;
                 //     }
                 // }
+				//! DO NOT USE ABOVE COMMENTED BLOCK
 
 				updateFileInfo(fileLocations, it.first);
                 updateClientMap(clients, findIter->first);
